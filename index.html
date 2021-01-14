@@ -21,9 +21,8 @@
         // Substitute as needed
         var client_id = 'nrmkyj3jbq4eukbuunluz5yygi9t7v';
         var redirect = 'https://jung-kim.github.io/twitchTest/index.html';
-        const str = `https://id.twitch.tv/oauth2/authorize?client_id=${client_id}&redirect_uri=&${redirect}&response_type=token+id_token&claims={"id_token":{"email":null}, "userinfo": { "picture": null }}`
 
-        document.getElementById('authorize').setAttribute('href', str)
+        document.getElementById('authorize').setAttribute('href', 'https://id.twitch.tv/oauth2/authorize?client_id=' + client_id + '&redirect_uri=' + encodeURIComponent(redirect) + '&response_type=token')
         document.getElementById('access_token').textContent = '';
 
         if (document.location.hash) {
